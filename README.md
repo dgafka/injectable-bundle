@@ -51,7 +51,7 @@ easily configure it with `services.yml`
     }
     
     
-##### Injected Services
+#####   Injected Services
     
     /**
      * @DI\Service()
@@ -97,6 +97,6 @@ will use of empty array.
 
     @DI\Tag(name="injectable", attributes={"to"="template_factory", "index"="0"})
     
-* `name="injectable"` - Marks service `to be used` of InjectableBundle 
+* `name="injectable"` - Marks service `to be used` by InjectableBundle 
 * `"to"="template_factory"` - Sets target service
-* `"index"="0"` - Sets target service argument index 
+* `"index"="0"` - Sets target service constructor argument index 
