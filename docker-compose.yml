@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  app:
+    build: "."
+    networks:
+      - "default"
+    volumes:
+      - "./:/data/app"
+    user: "www-data"
+    command: "sleep 999999"
+networks:
+  default:
+    driver: "bridge"

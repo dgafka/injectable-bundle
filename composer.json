@@ -1,0 +1,19 @@
+{
+    "name": "cleancode/injectable-bundle",
+    "description": "Bundle that allow for injecting classes dynamically",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dariusz Gafka",
+            "email": "dgafka.mail@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/framework-bundle": "~3.0"
+    },
+    "autoload": {
+        "psr-4": { "CleanCode\\Bundle\\InjectableBundle\\": "" }
+    }
+}
