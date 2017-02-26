@@ -1,6 +1,6 @@
 {
     "name": "cleancode/injectable-bundle",
-    "description": "Bundle that allow for injecting classes dynamically",
+    "description": "Injectable-bundle is responsible for injecting array of objects into your class. By tagging you mark an service to be injected into your target service.",
     "type": "library",
     "license": "MIT",
     "authors": [
