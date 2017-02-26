@@ -30,11 +30,24 @@ easily configure it with `services.yml`
         {
             $this->providers = $providers;
         }
+        
+        public function createFor(string $type) : Template
+        {
+            foreach ($this->providers as $provider) {
+                if ($provider->isHandling($type)) {
+                    return $provider;
+                }
+            }
+            
+            throw new \Exception("Template for {$type} doesn't exists!");
+        }
     }
     
     interface Template
     {
         public function render() : string
+        
+        public function isHandling(string $type) : bool;
     }
     
     
@@ -50,6 +63,28 @@ Injected Services
        {
             return "nice template";
        }
+       
+       public function isHandling(string $type) : bool
+       {
+            return $type === 'nice';
+       }
+    }
+
+    /**
+     * @DI\Service()
+     * @DI\Tag(name="injectable", attributes={"to"="template_factory", "index"="0"})
+     */
+    class UglyTemplate implements Template
+    {
+        public function render()
+       {
+            return "ugly template";
+       }
+       
+      public function isHandling(string $type) : bool
+      {
+           return $type === 'ugly';
+      }
     }
     
 Above service will be injected into TemplateFactory.  
